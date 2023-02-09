@@ -7,10 +7,11 @@ variable "instance_os" {
   default = "ubuntu"
 }
 variable "subnet_id" {
-  
+
 }
 variable "instance_type " {
-  
+  type = string 
+  default = "t2.micro"
 }
 variable "name" {
   
@@ -23,4 +24,16 @@ variable "ingress_rules" {
     { port = 22, cidr_block = ["0.0.0.0/0"] }
   ]
   
+}
+variable "vpc_id" {
+  
+}
+variable "var.ebs_volume_size" {
+  default = 10 
+  type = number
+  
+}
+variable "subnet_ids" {
+  type = list
+  #[aws_subnet.example1.id, aws_subnet.example2.id]
 }
